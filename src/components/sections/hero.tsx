@@ -16,7 +16,17 @@ export const HeroSection = ({ offset, factor = 2 }: HeroSectionProps) => {
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
   React.useEffect(() => {
-    audioRef.current?.play();
+    const promise = audioRef.current?.play();
+    if (promise !== undefined) {
+      promise
+        .then((_) => {
+          // Autoplay started!
+        })
+        .catch((error) => {
+          // Autoplay was prevented.
+          // Show a "Play" button so that user can start playback.
+        });
+    }
   }, [audioRef]);
 
   return (
@@ -53,7 +63,7 @@ export const HeroSection = ({ offset, factor = 2 }: HeroSectionProps) => {
               <p>{name}</p>
             </div>
           )}
-          <div sx={{ textAlign: 'center', visibility: 'hidden' }}>
+          <div sx={{ textAlign: 'center' }}>
             <audio ref={audioRef} controls autoPlay loop>
               <source src="https://docs.google.com/uc?export=download&id=1u1AGxXXqYZzIvHkyqo1SoY7tQcT3JNOg" />
             </audio>
