@@ -12,13 +12,5 @@ export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
       crossOrigin="anonymous"
       key="workSansFont"
     />,
-    <link
-      rel="preload"
-      href="/fonts/estylle-madison.ttf"
-      as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
-      key="estylleMadisonFont"
-    />,
   ]);
 };
