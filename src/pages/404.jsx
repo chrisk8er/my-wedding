@@ -1,5 +1,5 @@
-import * as React from "react"
-import Layout from "@lekoarts/gatsby-theme-jodie/src/components/layout"
+import * as React from 'react';
+import Layout from '../components/layout';
 
 const NotFound = () => (
   <Layout>
@@ -8,6 +8,6 @@ const NotFound = () => (
       <p>Page not found.</p>
     </div>
   </Layout>
-)
+);
 
-export default NotFound
+export default NotFound;

@@ -16,15 +16,25 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@lekoarts/gatsby-theme-jodie": "^4.0.0",
+    "@emotion/react": "^11.10.4",
+    "@mdx-js/react": "v1",
+    "@react-spring/parallax": "^9.5.5",
+    "@react-spring/web": "^9.5.5",
+    "@theme-ui/mdx": "^0.15.1",
+    "@theme-ui/presets": "^0.15.1",
     "gatsby": "^4.24.1",
     "gatsby-plugin-manifest": "^4.24.0",
     "gatsby-plugin-sitemap": "^5.24.0",
+    "gatsby-plugin-theme-ui": "^0.15.2-canary.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
+    "lottie-react": "^2.3.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-visibility-sensor": "^5.1.1",
+    "theme-ui": "^0.15.1"
   },
   "devDependencies": {
+    "@types/react-visibility-sensor": "^5.1.0",
     "cross-env": "^7.0.3"
   }
 }

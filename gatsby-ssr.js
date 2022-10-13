@@ -1,7 +1,7 @@
-import * as React from "react"
+import * as React from 'react';
 
 export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
-  setHtmlAttributes({ lang: `en` })
+  setHtmlAttributes({ lang: `en` });
 
   setHeadComponents([
     <link
@@ -12,5 +12,13 @@ export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
       crossOrigin="anonymous"
       key="workSansFont"
     />,
-  ])
-}
+    <link
+      rel="preload"
+      href="/fonts/estylle-madison.ttf"
+      as="font"
+      type="font/ttf"
+      crossOrigin="anonymous"
+      key="estylleMadisonFont"
+    />,
+  ]);
+};

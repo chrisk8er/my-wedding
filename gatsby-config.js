@@ -1,6 +1,6 @@
-require(`dotenv`).config()
+require(`dotenv`).config();
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -10,26 +10,15 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-jodie/gatsby-config.js
-    siteTitle: `Jodie`,
-    siteTitleAlt: `Jodie - Gatsby Starter Portfolio`,
-    siteHeadline: `Jodie - Gatsby Theme from @lekoarts`,
-    siteUrl: `https://jodie.lekoarts.de`,
-    siteDescription: `Image-heavy photography portfolio with colorful accents & customizable pages. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
+    siteTitle: `Krestian & Merry Wedding`,
+    siteTitleAlt: `Krestian & Merry - Wedding Invitation`,
+    siteHeadline: `Krestian & Merry - Wedding of Krestian & Merry`,
+    siteUrl: `https://krestianmerry.life`,
+    siteDescription: `Wedding invitation of Krestian & Merry`,
     siteImage: `/banner.jpg`,
-    author: `@lekoarts_de`,
+    author: `Krestian Weken`,
   },
   plugins: [
-    {
-      resolve: `@lekoarts/gatsby-theme-jodie`,
-      // See the theme's README for all available options
-      options: {
-        navigation: [
-          { name: `Projects`, slug: `/projects` },
-          { name: `Art`, slug: `/art` },
-          { name: `About`, slug: `/about` },
-        ],
-      },
-    },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
@@ -39,9 +28,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `jodie - @lekoarts/gatsby-theme-jodie`,
-        short_name: `jodie`,
-        description: `Image-heavy photography portfolio with colorful accents & customizable pages. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
+        name: `Krestian & Merry Wedding`,
+        short_name: `krestian&merry`,
+        description: `Wedding invitation of Krestian & Merry`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
@@ -62,6 +51,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-theme-ui`,
     shouldAnalyseBundle && {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
@@ -71,4 +61,4 @@ module.exports = {
       },
     },
   ].filter(Boolean),
-}
+};
