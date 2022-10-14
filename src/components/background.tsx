@@ -23,7 +23,7 @@ export const Background = ({ offset, factor = 1 }: BackgroundProps) => {
           height: `100vh`,
         }}
       >
-        <div
+        {/* <div
           sx={{
             position: 'absolute',
             left: '-25rem',
@@ -32,8 +32,9 @@ export const Background = ({ offset, factor = 1 }: BackgroundProps) => {
           }}
         >
           <WatercolorBg />
-        </div>
+        </div> */}
       </div>
+
       <div
         sx={{
           display: 'block',
