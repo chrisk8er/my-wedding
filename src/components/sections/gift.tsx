@@ -17,8 +17,8 @@ interface GiftSectionProps {
 }
 
 export const GiftSection = ({ offset, factor = 2 }: GiftSectionProps) => {
-  const [merryRekening] = React.useState('1234567');
-  const [krestianRekening] = React.useState('1234567');
+  const [merryRekening] = React.useState('0262204080');
+  const [krestianRekening] = React.useState('1500012864789');
   return (
     <section>
       <Content speed={0.4} offset={offset} factor={factor}>
