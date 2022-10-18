@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Container, jsx } from 'theme-ui';
+import { Button, Container, jsx } from 'theme-ui';
 
 // Icons
 import HandWashing from '../../assets/covid-protocol-icons/hand-washing.svg';
@@ -44,6 +44,22 @@ const WeddingEventSection = ({
                 Pukul <strong>13:00</strong> wita <br />
                 Gereja GMIM Efrata Uwuran Dua, Amurang
               </p>
+              <Button
+                onClick={(e) =>
+                  (location.href = 'https://goo.gl/maps/xkFKcE5CoPDJw4nu5')
+                }
+              >
+                Buka Map
+              </Button>
+              <Button
+                style={{ marginLeft: '1rem' }}
+                onClick={() =>
+                  (location.href =
+                    'https://calendar.google.com/event?action=TEMPLATE&tmeid=NGRxamh1ZTEyNzdqOTVnNGRvN2liajA2bXAgY2hyaXNrOGVyQG0&tmsrc=chrisk8er%40gmail.com')
+                }
+              >
+                Simpan Tanggal
+              </Button>
             </div>
             <div sx={{ textAlign: 'center' }}>
               <h3>Resepsi</h3>
@@ -52,6 +68,22 @@ const WeddingEventSection = ({
                 Pukul <strong>16:00</strong> wita <br />
                 Hotel Sutanraja, Amurang
               </p>
+              <Button
+                onClick={() =>
+                  (location.href = 'https://goo.gl/maps/zjgwaHjujsvSA4tx5')
+                }
+              >
+                Buka Map
+              </Button>
+              <Button
+                style={{ marginLeft: '1rem' }}
+                onClick={() =>
+                  (location.href =
+                    'https://calendar.google.com/event?action=TEMPLATE&tmeid=M2NlcGJ2ZTNhZ2JiMjJtZW9icHFnN2Y1M3YgY2hyaXNrOGVyQG0&tmsrc=chrisk8er%40gmail.com')
+                }
+              >
+                Simpan Tanggal
+              </Button>
             </div>
           </div>
           <div

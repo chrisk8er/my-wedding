@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { Container, jsx } from 'theme-ui';
-import { ParallaxLayer } from '@react-spring/parallax';
+import { Button, Container, jsx } from 'theme-ui';
+import { IParallax, ParallaxLayer } from '@react-spring/parallax';
 
 import Content from '../content';
 import Cover from '../../assets/photos/cover.jpg';
@@ -9,9 +9,11 @@ import React from 'react';
 interface HeroSectionProps {
   offset: number;
   factor?: number;
+  parallaxRef?: IParallax | null;
 }
 
-export const HeroSection = ({ offset, factor = 2 }: HeroSectionProps) => {
+const HeroSection = ({ offset, factor = 2, parallaxRef }: HeroSectionProps) => {
+  const [first, setFirst] = React.useState(parallaxRef);
   const [name, setName] = React.useState(getNameFromURL());
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
@@ -55,6 +57,11 @@ export const HeroSection = ({ offset, factor = 2 }: HeroSectionProps) => {
             <h3>&</h3>
             <h1 sx={{ marginLeft: '4rem' }}>Merry</h1>
           </div>
+          <div sx={{ textAlign: 'center', visibility: 'hidden' }}>
+            <audio ref={audioRef} controls autoPlay loop>
+              <source src="https://docs.google.com/uc?export=download&id=1u1AGxXXqYZzIvHkyqo1SoY7tQcT3JNOg" />
+            </audio>
+          </div>
           {name && (
             <div sx={{ marginTop: '4rem' }}>
               <p>
@@ -63,13 +70,18 @@ export const HeroSection = ({ offset, factor = 2 }: HeroSectionProps) => {
               <p>{name}</p>
             </div>
           )}
-          <div sx={{ textAlign: 'center' }}>
-            <audio ref={audioRef} controls autoPlay loop>
-              <source src="https://docs.google.com/uc?export=download&id=1u1AGxXXqYZzIvHkyqo1SoY7tQcT3JNOg" />
-            </audio>
-          </div>
+          <Button
+            onClick={() => {
+              audioRef.current?.play();
+              parallaxRef?.scrollTo(1);
+            }}
+          >
+            Buka Undangan
+          </Button>
         </Container>
       </Content>
     </section>
   );
 };
+
+export default HeroSection;

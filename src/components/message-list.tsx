@@ -1,18 +1,29 @@
 /** @jsx jsx */
-import { jsx, get } from 'theme-ui';
+import { jsx, get, Button } from 'theme-ui';
 import React from 'react';
+import ReactModal from 'react-modal';
 import { useGetMessage } from '../hooks/useGetMessage';
+import { MessageForm } from './message-form';
 
 export const MessageList = () => {
-  const { data } = useGetMessage();
+  const { data, refetch } = useGetMessage();
+  const [showModal, setShowModal] = React.useState(false);
 
   return (
     <div
       sx={{
         overflowY: 'auto',
         paddingRight: `1rem`,
+        position: 'relative',
       }}
     >
+      <Button
+        sx={{ width: `100%` }}
+        variant="primary"
+        onClick={() => setShowModal(true)}
+      >
+        Tulis Pesan
+      </Button>
       {data.map(({ id, name, attandence, message }) => (
         <div
           sx={{
@@ -33,6 +44,29 @@ export const MessageList = () => {
           <p sx={{ margin: `3px 0` }}>{message}</p>
         </div>
       ))}
+
+      <ReactModal
+        isOpen={showModal}
+        ariaHideApp={false}
+        style={{
+          content: { width: '100vw', height: '100vh', top: 0, left: 0 },
+        }}
+      >
+        <div sx={{ display: 'flex', flexDirection: 'row-reverse' }}>
+          <span
+            sx={{ textAlign: 'end', fontSize: 'xx-large' }}
+            onClick={() => setShowModal(false)}
+          >
+            &times;
+          </span>
+        </div>
+        <MessageForm
+          onSending={(data) => {
+            setShowModal(false);
+            refetch();
+          }}
+        />
+      </ReactModal>
     </div>
   );
 };

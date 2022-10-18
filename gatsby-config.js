@@ -60,5 +60,11 @@ module.exports = {
         openAnalyzer: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#405080`,
+      },
+    },
   ].filter(Boolean),
 };

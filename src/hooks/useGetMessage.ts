@@ -13,6 +13,10 @@ export const useGetMessage = () => {
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
+    fetchingMessages();
+  }, []);
+
+  const fetchingMessages = () => {
     fetch(`https://my-wedding-api.glitch.me/api/message`)
       .then((response) => {
         if (!response.ok) {
@@ -44,11 +48,12 @@ export const useGetMessage = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  };
 
   return {
     data: messages,
     error,
     loading,
+    refetch: fetchingMessages,
   };
 };

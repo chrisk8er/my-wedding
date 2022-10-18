@@ -45,7 +45,7 @@ export const UtteranceSection = ({
                 height: `100%`,
               }}
             >
-              <MessageForm onSending={(data) => setNewData(data)} />
+              {/* <MessageForm onSending={(data) => setNewData(data)} /> */}
 
               {!newData ? (
                 <MessageList />

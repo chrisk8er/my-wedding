@@ -62,13 +62,14 @@ export const MessageForm = ({
         borderRadius: `17px`,
         alignSelf: 'flex-start',
         marginTop: '2rem',
+        width: '100%',
       }}
     >
       <Label>
         <Input
-          defaultValue={name}
-          disabled={name ? true : false}
+          disabled={getNameFromURL() ? true : false}
           placeholder="Nama anda"
+          value={name}
           required
           onChange={(e) => setName(e.target.value)}
         />
