@@ -23,7 +23,11 @@ const Index = () => {
       <Parallax ref={parallaxRef} id="home-parallax" pages={6.5}>
         <Background offset={0} factor={5.5} />
 
-        <HeroSection offset={0} factor={1} parallaxRef={parallaxRef.current} />
+        <HeroSection
+          offset={0}
+          factor={1}
+          open={() => parallaxRef.current?.scrollTo(1)}
+        />
 
         {/* <QuoteSection
         text="Berdua lebih baik dari pada seorang diri, karena mereka menerima upah yang baik dalam jerih payah mereka."

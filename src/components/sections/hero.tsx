@@ -9,12 +9,11 @@ import React from 'react';
 interface HeroSectionProps {
   offset: number;
   factor?: number;
-  parallaxRef?: IParallax | null;
+  open: () => void;
 }
 
-const HeroSection = ({ offset, factor = 2, parallaxRef }: HeroSectionProps) => {
-  const [first, setFirst] = React.useState(parallaxRef);
-  const [name, setName] = React.useState(getNameFromURL());
+const HeroSection = ({ offset, factor = 2, open }: HeroSectionProps) => {
+  const [name] = React.useState(getNameFromURL());
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
   React.useEffect(() => {
@@ -73,7 +72,7 @@ const HeroSection = ({ offset, factor = 2, parallaxRef }: HeroSectionProps) => {
           <Button
             onClick={() => {
               audioRef.current?.play();
-              parallaxRef?.scrollTo(1);
+              open();
             }}
           >
             Buka Undangan
