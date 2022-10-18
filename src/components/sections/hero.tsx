@@ -56,7 +56,14 @@ const HeroSection = ({ offset, factor = 2, open }: HeroSectionProps) => {
             <h3>&</h3>
             <h1 sx={{ marginLeft: '4rem' }}>Merry</h1>
           </div>
-          <div sx={{ textAlign: 'center', visibility: 'hidden' }}>
+          <h4>22.10.2022</h4>
+          <div
+            sx={{
+              textAlign: 'center',
+              visibility: 'hidden',
+              position: 'absolute',
+            }}
+          >
             <audio ref={audioRef} controls autoPlay loop>
               <source src="https://docs.google.com/uc?export=download&id=1u1AGxXXqYZzIvHkyqo1SoY7tQcT3JNOg" />
             </audio>

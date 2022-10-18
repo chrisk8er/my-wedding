@@ -17,10 +17,10 @@ export default function HTML(props) {
         <div id="loader-wrapper" className="loader-wrapper">
           <div className="loader">
             <div id="base">
-              <div class="f11"></div>
-              <div class="f12"></div>
-              <div class="f13"></div>
-              <div class="f14"></div>
+              <div className="f11"></div>
+              <div className="f12"></div>
+              <div className="f13"></div>
+              <div className="f14"></div>
             </div>
             <div id="loving">Loving...</div>
           </div>
